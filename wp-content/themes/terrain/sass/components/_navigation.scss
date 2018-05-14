@@ -1,0 +1,149 @@
+
+.widget-title{
+
+}
+.widget_search{
+	width:100%;
+	display: flex;
+	flex-flow: row nowrap; 
+	overflow: hidden;
+	padding: 0;
+	
+}
+.search-form{
+	width:100%;
+	@include brad(0);
+	//width:30%;
+	//@include flex(1,0,100%);
+	
+	margin: 0;
+	//padding: 1.5rem .75rem;
+	border-bottom: .1rem solid $accent;
+	
+	text-align: center;
+	text-decoration: none;
+}
+// .search-form label{
+// 	background: gold;
+// 	width:auto;
+// 	@include brad(0);
+// 	//width:30%;
+// 	@include flex(1,0,100%);
+// 	padding: .3rem;
+// 	margin: 0;
+
+// }
+.search-form input[type=search]{
+	border:none;
+	text-align: center;
+	font-family: 'Poiret One', sans-serif;
+  	font-size: 1.5rem;
+  	color: $textcolor;
+	@include brad(0);
+	margin: 0;
+	display: block;
+	width: 100%;
+	padding: 1.5rem .75rem;
+
+	background: none;
+	text-align: center;
+	text-decoration: none;
+}
+.search-form input[type=”submit”]{
+	width:0;
+	display: none;
+	// width:auto;
+	// @include brad(0);
+	// //width:30%;
+	// @include flex(1,0,100%);
+	// padding: .3rem;
+	// margin: 0;
+}
+
+.search-submit{
+	width:0;
+	display: none;
+	// //width:auto;
+	// background: blue;
+	// @include brad(0);
+	// // width:30%;
+	// @include flex(1,0,50%);
+	// //padding: .3rem;
+	// margin: 0;
+	
+}
+
+// input[type=search] { 
+// 	color: red; 
+// 	//font-size: 2rem; 
+// 	text-align: right;
+// 	cursor: pointer;           
+// }
+
+.widget{
+	width:100%;
+	margin: 0;
+}
+
+.sidemenuclass{
+	color: white;
+	margin-bottom: 0;
+
+}
+.menu{
+	padding: 0;
+}
+
+.menu-item a {
+//This class is added to every menu item.
+	display: block;
+	width: 100%;
+	padding: 1.5rem .75rem;
+	border-bottom: .1rem solid $accent;
+	//background: $menubg;
+	text-align: center;
+	text-decoration: none;
+}
+
+
+.menu-item #{$a-tags-hover} {
+	background: $menubgalt;
+	color: $navcolor;
+	transition: background-color 0.75s ease;
+	transition: color 0.25s ease;
+	text-decoration: none;
+
+}
+
+
+
+.menu-item-has-children {
+//This class is added to menu item which has sub-items .
+	
+}
+
+.menu-item-object-page {
+//This class is added to menu items that correspond to static pages.
+	
+}
+
+.current-menu-item {
+//This class is added to menu items that correspond to the currently rendered page.
+background-color: $menumark;
+
+}
+
+.current-menu-parent {
+//This class is added to menu items that correspond to the hierarchical parent of the currently rendered page.
+	
+}
+
+.current-menu-ancestor {
+//This class is added to menu items that correspond to a hierarchical ancestor of the currently rendered page.
+	
+}
+
+.menu-item-home {
+//This class is added to menu items that correspond to the site front page.
+	
+}

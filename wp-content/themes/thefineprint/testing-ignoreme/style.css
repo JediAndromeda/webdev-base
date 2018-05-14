@@ -1,0 +1,93 @@
+
+
+main {
+  
+  margin: 0 auto;
+}
+section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border:.2rem purple solid;
+
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: red;
+
+}
+
+.container {
+  display: grid;
+
+
+}
+
+article,
+aside {
+  flex-basis: 100%;
+  border:.2rem cyan solid;
+}
+@media screen and (min-width: 800px) {
+  aside {
+    /* Defines content aside from the page content*/
+    flex: 2.5;
+  }
+  article {
+    /*Defines an article*/
+    flex: 7.5;
+  }
+}
+
+
+
+
+details{
+  /* Defines additional details that the user can view or hide*/
+
+}
+figcaption{
+  /*  Defines a caption for a "figure" element*/
+
+}
+figure{
+  /*  Specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.*/
+
+}
+footer{
+  /*  Defines a footer for a document or section*/
+
+}
+header{
+  /*  Specifies a header for a document or section*/
+
+}
+main{
+  /*  Specifies the main content of a document*/
+
+}
+mark{
+  /*  Defines marked/highlighted text*/
+
+}
+nav{
+  /* Defines navigation links*/
+  flex: 0 0 10rem;
+  overflow: hidden;
+  border:.2rem lime solid;
+
+}
+
+section{
+  /* Defines a section in a document*/
+
+}
+summary{
+  /* Defines a visible heading for a "details" element*/
+
+}
+time{
+/*  Defines a date/time*/

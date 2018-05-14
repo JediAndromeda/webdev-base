@@ -1,0 +1,116 @@
+/* Layout
+  =============== */ 
+
+
+// #page{
+
+// }
+.site{
+	//mini
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	color: black;
+	display: grid;
+  	grid-template-columns: 10rem minmax(20rem, 1fr);
+  	grid-template-rows: 3rem 1fr 3rem 3rem;
+  	grid-template-areas: 
+    "header main "
+    "header main"
+    "widget widget"
+    "footer footer";
+
+  
+}
+// .site{
+// 	//med
+// 	width: 100vw;
+// 	height: 100vh;
+// 	margin: 0;
+// 	padding: 0;
+// 	color: black;
+// 	display: grid;
+//   	grid-template-columns: 10rem minmax(20rem, 1fr);
+//   	grid-template-rows: 3rem 1fr 3rem;
+//   	grid-template-areas: 
+//     "header main "
+//     "header main"
+//     "footer footer";
+
+  
+// }
+// .site{
+// 	//tasty
+// 	width: 100vw;
+// 	height: 100vh;
+// 	margin: 0;
+// 	padding: 0;
+// 	color: black;
+// 	display: grid;
+//   	grid-template-columns: 10rem minmax(20rem, 1fr);
+//   	grid-template-rows: 3rem 1fr 3rem;
+//   	grid-template-areas: 
+//     "header header "
+//     "nav main"
+//     "nav footer";
+
+  
+// }
+
+// #masthead{
+
+// }
+.site-header {
+	grid-area: header;
+	background: tomato;
+}
+//role? banner
+
+// #main{
+
+// }
+.site-main {
+	overflow-y: scroll;
+	background: powderblue;
+	grid-area: main;
+	
+	display: grid;
+	grid-template-columns: repeat(3, minmax(10rem, 1fr));
+	grid-template-rows: repeat(3, minmax(10rem, 1fr));
+	grid-auto-rows: minmax(10rem, 1fr);
+	grid-gap: .5rem;
+	grid-auto-flow: row dense;
+	
+}
+//role? main
+// #secondary{
+
+// }
+.widget-area {
+	grid-area: widget;
+
+}
+//role? complementary
+   
+// #colophon{
+
+// }
+.site-footer {
+	
+	grid-area: footer;
+	background: ROSYBROWN;
+}
+//role? contentinfo
+article{
+	border: .2rem solid plum;
+
+}
+.big {
+	grid-column: span 2;
+  	grid-row: span 2;
+}
+.long {
+	grid-column: span 2;
+  	grid-row: span 1;
+}

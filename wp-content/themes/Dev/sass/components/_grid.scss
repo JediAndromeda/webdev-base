@@ -1,0 +1,236 @@
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.3em;
+  color: #ccc;
+  background: $supadrk;
+  margin: 0;
+}
+/* unvisited link */
+a, a:visited, {
+	text-decoration: none;
+	color: $linkcolor;
+	
+}
+a:hover, a:active{
+	color:$hovercolor;
+ 	text-decoration: underline;
+ 	font:bold ;
+ }
+
+.contain{
+	max-width: $maxwide;
+	margin: 0 auto;
+	margin-left: $navsize;
+}
+.navbar {
+	background: $purpli;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, $purpdrk, $pink);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, $purpdrk, $pink); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	width: $navsize;
+	position: fixed;
+	min-height: 30rem;
+	height: 100%;
+	color: $textcolor;
+}
+
+.blog-post {
+  margin-bottom: 4rem;
+  width: 100%;
+}
+.blog-post-title, .blog-post-title a {
+	text-decoration: none;
+	margin: 0;
+  	margin-bottom: .5rem;
+  	font-size: 2.5rem;
+  	color:$titlecolor;
+  	text-align: right;
+  	border-bottom: .1rem solid $titlecolor;
+  	width: 100%;
+}
+.blog-post-title a:hover{
+	text-decoration: none;
+	color:$titlehover
+}
+.blog-post-meta {
+	text-align: justify;
+	position: absolute;
+ 	bottom: 5%;
+ 	right: 5%;
+  	color: white;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  
+}
+.row{
+	margin: 0 10px;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.article{
+	position: relative;
+	display: block;
+	text-align: justify;
+	vertical-align: bottom;
+	flex:1 0 20%;
+	height: $articleheight;
+	padding: 0rem;
+  	margin: 0.5em 0 0 0.5em;
+  	overflow-x: hidden;
+
+}
+.singlearticle{
+	background: none;
+	flex:1 0 30%;
+	padding: 5px;
+  	min-width: 10em;
+  	margin: 0.5em 0 0 0.5em;
+
+
+}
+.blog-header{
+	display: none;
+}
+
+
+
+.wp-caption {
+
+}
+.wp-caption-text {
+	
+}
+.sticky {
+	
+}
+.screen-reader-text {
+	
+}
+.gallery-caption {
+	
+}
+.bypostauthor {
+	
+}
+.alignright {
+	
+}
+.alignleft {
+	
+}
+.aligncenter {
+	
+}
+
+.sidemenuclass{
+	color: white;
+
+}
+
+.sidemenuclass ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidemenuclass li {
+	display: block;
+	text-align: center;
+    width:100%;
+    margin: 0;
+    padding: .5rem;
+    
+}
+
+.sidemenuclass a,a:hover{
+	color: white;
+	font-weight:normal;
+}
+
+.sidemenuclass li:hover{
+	text-decoration: none;
+	font-size: 1.5rem;
+	font:bold;
+	
+
+}
+//styling for featured image
+.featimg {
+	display: block;	
+ 	min-height: 100%;
+    width: auto;
+    margin: 0;
+    
+}
+
+.coloroverlay {
+	background: $overlaycolor;
+	position: absolute;
+	top:0rem;
+	right:0rem;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 1.5s;
+	padding:1rem;
+
+}
+.nopictext {
+	background-color: $purpli;
+	position: absolute;
+	top:0rem;
+	right:0rem;
+	width: 100%;
+	height: 100%;
+	
+	padding:1rem;
+	-webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+	padding:1rem;
+
+}
+.nopictext:hover {
+	background-color: $overlaycolor;
+	-webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+
+}
+.coloroverlay:hover, .textoverlay:hover{
+	opacity: .8;
+  	transition: opacity .5s;
+}
+.textoverlay:hover {
+	opacity: 1; 
+}
+
+/*._25 {
+	flex: 2.5;
+}
+._55 {
+	flex: 5.5;
+}
+._20 {
+	flex: 2;
+}
+._33{
+	flex: 3.3;
+}
+*/
+

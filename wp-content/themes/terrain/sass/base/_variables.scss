@@ -1,0 +1,57 @@
+$mobilebreak: 800px;
+$maxwide: 1400px;
+$postswidth: 800px;
+$navsize:15rem;
+$articleheight:20rem;
+$sectionheight1: 40rem;
+$sectionheight2: 40rem;
+$sectionheight3: 40rem;
+//Table variables
+$padding:1rem;
+$border-color:#0e5686;
+$stripes:rgba(255,255,255,.1);
+//blockquotes
+$bq-border: 16px solid #f0f0f0;
+$margins: 1.5rem;
+
+// Colour Scheme
+$drk: #121212;
+$med: #282828;
+$lig: #424242;
+$white: #e2e2e2;
+$mtl1: #46210e;  	//dark
+$mtl2: #c3ac6d;  	//med
+$mtl3: #edd87d;		//light
+$mtl4: #a57031;		//med
+$mtl5: #fff7d4;		//bril
+$popc: #0e5686;
+
+
+
+$menumark: none;
+$navcolor: #13151e;
+$menubgalt: #e6c591;
+$bgcolor: #080a0f;
+$articlecolor: none;
+$titlehover: #e6c591;
+$titlecolor: #e6c591;
+$textcolor: #e6c591;
+$linkcolor: #e6c591;
+$hovercolor: #e6c591;
+$overlaycolor: #c09a5e;
+$buttonbg:$mtl5;
+$accent:$mtl3;
+
+
+
+$gradient: -webkit-linear-gradient(bottom right, $mtl1 0, $mtl2 8%, $mtl3 14%, $mtl2 21%, $mtl4 32%, $mtl2 52%, $mtl3 67%, $mtl5 69%, $mtl4 72%, $mtl2 82%, $mtl4 100%);
+
+$buttons: ('button, 
+.button, 
+a.button, 
+[type=submit],
+[type=button]');
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+

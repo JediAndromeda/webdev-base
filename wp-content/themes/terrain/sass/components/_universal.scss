@@ -1,0 +1,250 @@
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin:0;
+}
+
+body {
+  font-family: 'Poiret One', sans-serif;
+  font-size: 1.5rem;
+  color: $textcolor;
+  background: $bgcolor;
+  margin: 0;  
+}
+
+.blog-header{
+	display: none;
+}
+
+a, a:visited, {
+	text-decoration: none;
+	color: $linkcolor;
+	}
+
+a:hover, a:active{
+	color:$hovercolor;
+ 	text-decoration: underline;
+ 	font:bold ;
+}
+
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  text-decoration: none;
+  font-family: 'Megrim', sans-serif;
+  
+}
+
+
+h1, .h1, h1 a:hover, .h1 a:hover{
+	text-decoration: none;
+	font-family: 'Megrim', sans-serif;
+  font-weight: bold;
+	
+}
+
+
+
+
+
+
+//Wordpress Default Tags
+/* =WordPress Core
+-------------------------------------------------------------- */
+.sticky{
+  background: none;
+}
+
+.gallery-caption{
+background: none;
+}
+
+.bypostauthor{
+background: none;
+}
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption {
+    //background: rgba(255,255,255,.25);
+   // max-width: 96%; /* Image does not overflow the content area */
+    padding:0;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin: 0;
+    
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Tables
+  =============== */
+
+// Table expands to full width of containing element
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+// Extra border underneath header
+thead th {
+  border-bottom: 2px solid $border-color;
+}
+
+// Extra border above footer
+tfoot th {
+  border-top: 2px solid $border-color;
+}
+
+td {
+  border-bottom: 1px solid $border-color;
+}
+
+th,
+td {
+  text-align: left;
+  padding: .5rem;
+}
+
+caption {
+  padding: $padding 0;
+  caption-side: bottom;
+  //color: $caption;
+}
+
+.striped-table tbody tr:nth-child(odd) {
+  background-color: $stripes;
+}
+
+// Container for responsive tables
+.contain-table {
+  overflow-x: auto;
+}
+
+// Blockquote
+blockquote {
+  margin: $margins 0 $margins 0;
+  border-left: $bq-border;
+  padding: 0 1.5rem;
+  font-size: 1.5rem;
+  cite {
+    display: block;
+    margin-top: $margins;
+    font-size: 1rem;
+    text-align: right;
+  }
+}

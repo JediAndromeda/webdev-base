@@ -1,0 +1,44 @@
+/*!
+Theme Name: thefineprint
+Theme URI: http://catleonard.com/
+Author: Cat
+Author URI: http://catleonard.com
+Description: I made dis
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: thefineprint
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+thefineprint is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+
+// Configuration
+@import "base/variables";
+@import "base/mixins";
+
+// Reset
+@import "base/normalize";
+@import "base/reset";
+
+// Components
+// @import "components/scaffolding";
+// @import "components/grid";
+// @import "components/helpers";
+// @import "components/buttons";
+// @import "components/forms";
+// @import "components/tables";
+@import "components/navigation";
+@import "components/layout";
+
+
+
+

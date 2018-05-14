@@ -1,0 +1,34 @@
+/* Colors */
+
+// never use these directly!
+$_purple:	#7d48e0;
+$_orangelobster:	#ed5c54;
+$_purplegreyhaiti: #211922;
+
+$_materialpurple: #9b26af;
+$_drkmaterialpurple:#691a99;
+$_materialturq: #68efad;
+
+$_tangoorange:#e8692e;
+$_warmstudiopurple:#7B48A7;
+
+$_studiopurple: #86509c;
+$_flamencoorange:#eb7d4c;
+$_puertoricojade:#57c3a6;
+
+// only access colors through these “proxy”-variables
+
+$color-brand:	$_studiopurple;
+$color-accent:	$_flamencoorange;
+$link-color:	$_puertoricojade;
+$link-hover-color: lighten($link-color, 15%);
+$highlight: 	$_puertoricojade;
+$darkbase: $_purplegreyhaiti;
+
+
+
+// $color-link-visited:	$_something;
+// $color-error:	$_something
+// $color-warning:	$_something
+// $color-neutral:	$_something
+

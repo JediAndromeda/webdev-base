@@ -1,0 +1,358 @@
+/// Mixin helper to output vendor-prefixed CSS
+/// @access private
+/// @author HugoGiraudel
+/// @param {String} $property - Unprefixed CSS property
+/// @param {*} $value - Raw CSS value
+/// @param {List} $prefixes [()] - List of prefixes to output
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+
+  #{$property}: $value; 
+}
+
+@mixin font-size($size) {
+  @if unitless($size) {
+    $size: $size * 1px;
+  }
+
+  font-size: $size;
+  font-size: ($size / $base-font-size) * 1rem;
+}
+
+
+
+@mixin flex($g, $s, $b) {
+    // write the css here
+    display: -webkit-flex;
+    display: flex;
+    flex: $g $s $b;
+}
+
+
+@mixin brad($radius) {
+   @if unitless($radius) {
+    $radius: $radius * 1rem;
+  }
+    @include prefix(border-radius, $radius, 'webkit' 'moz');
+} 
+
+/// Separated border-radius helpers
+/// @access public
+/// @param {Length} $top-left-radius - Top left radius
+/// @param {Length} $top-right-radius - Top right radius
+/// @param {Length} $bottom-right-radius - Bottom right radius
+/// @param {Length} $bottom-left-radius - Bottom left radius
+/// @example scss - Usage
+///   .foo {
+///     @include border-radius-separate(1px, 2px, 3px, 4px);
+///   }
+///   }
+/// @example css - Result
+///   .foo {
+///     -webkit-border-top-left-radius: 1px;
+///     -moz-border-top-left-radius: 1px;
+///     border-top-left-radius: 1px;
+///     -webkit-border-top-right-radius: 2px;
+///     -moz-border-top-right-radius: 2px;
+///     border-top-right-radius: 2px;
+///     -webkit-border-bottom-right-radius: 3px;
+///     -moz-border-bottom-right-radius: 3px;
+///     border-bottom-right-radius: 3px;
+///     -webkit-border-bottom-left-radius: 4px;
+///     -moz-border-bottom-left-radius: 4px;
+///     border-bottom-left-radius: 4px;
+///   }
+@mixin border-radius-separate($top-left-radius, $top-right-radius, $bottom-right-radius, $bottom-left-radius) {
+    @include prefix(border-top-left-radius, $top-left-radius, 'webkit' 'moz');
+    @include prefix(border-top-right-radius, $top-right-radius, 'webkit' 'moz');
+    @include prefix(border-bottom-right-radius, $bottom-right-radius, 'webkit' 'moz');
+    @include prefix(border-bottom-left-radius, $bottom-left-radius, 'webkit' 'moz');
+}
+
+/// Box-sizing helper
+/// @access public
+/// @param {String} $type - Either `border-box`, `padding-box` or `content-box`
+/// @example scss - Usage
+///   .foo {
+///     @include box-sizing(border-box);
+///   }
+/// @example css - Result
+///   .foo {
+///     -moz-box-sizing: border-box;
+///     box-sizing: border-box;
+///   }
+@mixin box-sizing($type) {
+    @include prefix(box-sizing, $type, 'moz');
+}
+
+
+/// Horizontally and vertically centers block elements
+/// Important: you must have a parent element with `position: relative`.
+/// @access public
+/// @example scss - Usage
+///   .foo {
+///     @include center-both;
+///   }
+/// @example css - Result
+///   .foo {
+///     position: absolute;
+///     top: 50%;
+///     left: 50%;
+///     -webkit-transform: translate(-50%, -50%);
+///     -ms-transform: translate(-50%, -50%);
+///     transform: translate(-50%, -50%);
+///   }
+@mixin center-both {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include prefix(transform, translate(-50%, -50%), 'webkit' 'ms');
+}
+
+/// Given a font size in pixels, reproduces that font size in rems.
+/// @access public
+/// @param {Length} $size - Font size
+/// @example scss - Usage
+///   .foo {
+///     @include font-size(16px);
+///   }
+/// @example css - Result
+///   .foo {
+///     font-size: 16px;
+///     font-size: 1rem;
+///   }
+@mixin font-size($size) {
+  @if unitless($size) {
+    $size: $size * 1px;
+  }
+
+  font-size: $size;
+  font-size: ($size / $base-font-size) * 1rem;
+}
+
+
+
+
+/// Generates the color black, with, optionally, a set opacity.
+/// @access public
+/// @param {Float} $opacity - Opacity
+/// @example scss - Usage
+///   .foo {
+///     border-color: black(0.1);
+///   }
+/// @example css - Result
+///   .foo {
+///     border-color: rgba(0, 0, 0, 0.1);
+///   }
+@function black($opacity) {
+    @return rgba(0, 0, 0, $opacity);
+}
+
+
+/// Generates the color white, with, optionally, a set opacity.
+/// @access public
+/// @param {Float} $opacity - Opacity
+/// @example scss - Usage
+///   .foo {
+///     border-color: white(0.1);
+///   }
+/// @example css - Result
+///   .foo {
+///     border-color: rgba(255, 255, 255, 0.1);
+///   }
+@function white($opacity) {
+    @return rgba(255, 255, 255, $opacity);
+}
+
+/// Automatically prefix any transform
+/// @access public
+/// @param {String} $transformation - The transform to apply
+/// @example scss - Usage
+///   .foo {
+///     @include transform(translateX(10px));
+///   }
+/// @example css - Result
+///   .foo {
+///     -webkit-transform: translateX(10px);
+///     -ms-transform: translateX(10px);
+///     transform: translateX(10px);
+///   }
+@mixin transform($transformation){
+  @include prefix(transform, $transformation, 'webkit' 'ms');
+}
+
+
+
+/// Transition helper
+/// @param {Time} $time [1s] - Duration
+/// @param {String} $timing-function [ease-in-out] - Timing function or cubic bezier curve
+/// @example scss - Usage
+///   .foo {
+///     @include transition(0.3s, ease-in);
+///   }
+/// @example css - Result
+///   .foo {
+///     -webkit-transition: all 0.3s ease-in;
+///     transition: all 0.3s ease-in;
+///   }
+@mixin transition($time: 1s, $timing-function: ease-in-out) {
+    @include prefix(transition, all $time $timing-function, 'webkit');
+}
+
+/// Given two opacity values, animates an element between those opacity values.
+/// @access public
+/// @param {Number} $fade-from [0] - The beginning opacity value.
+/// @param {Number} $fade-to [1] - The final opacity value.
+/// @param {List} $animation-properties [1s ease] - The animation properties to apply.
+/// @example scss - Usage
+///   .foo {
+///     @include fade(.8, .2, 3s linear);
+///   }
+/// @example css - Result
+///   .foo {
+///     -webkit-animation: fade-0-8-0-2 3s linear;
+///     animation: fade-0-8-0-2 3s linear;
+///   }
+/// // (the @keyframes are also generated with a -webkit- vendor prefix)
+///   @keyframes fade-0-8-0-2 {
+///     from {
+///       opacity: 0.8;
+///       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+///     }
+///     to {
+///       opacity: 0.2;
+///       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+///     }
+///   }
+@mixin fade($fade-from: 0, $fade-to: 1, $animation-properties: 1s ease) {
+    $alias: fade- + str-replace($fade-from + '', '.', '-') + '-' + str-replace($fade-to + '', '.', '-');
+    @include keyframes($alias){
+    from {
+      @include opacity($fade-from);
+    }
+    to {
+      @include opacity($fade-to);
+    }
+  }
+  @include prefix(animation, $alias $animation-properties, 'webkit');
+}
+
+/// Generates a grow-then-shrink (or shrink-then-grow) animation using transform(scale).
+/// @access public
+/// @param {Number} $scale-change [1.1] - The amount to scale by.
+/// @param {List} $animation-properties - Animation properties to apply.
+/// @example scss - Usage
+///   .foo {
+///     @include scale(0.5, 3s ease infinite alternate);
+///   }
+/// @example css - Result
+///   .foo {
+///     -webkit-animation: "scale-0-5" 3s ease infinite alternate;
+///     animation: "scale-0-5" 3s ease infinite alternate;
+///   }
+///  // -webkit- prefixed @keyframes are also generated
+///  @keyframes scale-0-5 {
+///    from, to {
+///      -webkit-transform: scale(1);
+///      -ms-transform: scale(1);
+///      transform: scale(1);
+///    }
+///    50% {
+///      -webkit-transform: scale(0.5);
+///      -ms-transform: scale(0.5);
+///      transform: scale(0.5);
+///    }
+///  }
+@mixin scale($scale-change:1.1, $animation-properties: 1s ease-in-out) {
+  $alias: 'scale-' + str-replace($scale-change + '', '.', '-');
+
+  @include keyframes($alias){
+    0%, 100% {
+      @include transform(scale(1));
+    }
+    50% {
+      @include transform(scale($scale-change));
+    }
+  }
+
+  @include prefix(animation, $alias $animation-properties, 'webkit');
+}
+
+/// Embossing text shadow
+/// @access public
+/// @param {Float} $value - Opacity value
+/// @example scss - Usage
+///   .foo {
+///     @include text-shadow(0.5);
+///   }
+/// @example css - Result
+///   .foo {
+///     text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
+///   }
+@mixin text-shadow($value) {
+    text-shadow: rgba(255, 255, 255, $value) 0 1px 0;
+}
+
+
+/// Sizing helper
+/// @access public
+/// @param {Length} $width - Width
+/// @param {Length} $height [$width] - Height
+/// @example scss - Usage
+///   .foo {
+///     @include size(350px);
+///   }
+/// @example css - Result
+///   .foo {
+///     width: 350px;
+///     height: 350px;
+///   }
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+
+/// Vertically centers block elements with known height.
+/// @access public
+/// @param {Length} $height - Element's height
+/// @example scss - Usage
+///   .foo {
+///     @include center-h(42px);
+///   }
+/// @example css - Result
+///   .foo {
+///     position: absolute;
+///     top: 50%;
+///     height: 42px;
+///     margin-top: -21px;
+///   }
+@mixin center-h($height) {
+    position: absolute;
+    top: 50%;
+    height: $height;
+    margin-top: -($height / 2);
+}
+
+/// Horizontally centers block elements
+/// @access public
+/// @example scss - Usage
+///   .foo {
+///     @include center-block;
+///   }
+/// @example css - Result
+///   .foo {
+///     display: block;
+///     margin-left: auto;
+///     margin-right: auto;
+///   }
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+

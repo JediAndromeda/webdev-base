@@ -1,0 +1,11 @@
+
+
+/* Forms */
+
+$forms: ('[type=color], [type=date], [type=datetime], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea');
+$buttons: ('.button, a.button, button, [type=submit], [type=reset], [type=button]');
+$input-background: transparent;
+$placeholder: darken($accent-color, 20%);
+$form-border: 1px solid #cdcdcd;
+$form-border-hover: 1px solid darken(#cdcdcd, 10%);
+$form-border-focus: 1px solid $link-color;

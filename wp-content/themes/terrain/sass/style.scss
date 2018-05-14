@@ -1,0 +1,26 @@
+/*
+Theme Name: Terrain
+Theme URI: nada
+Author: it me
+Author URI: nope
+Description: I made dis
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: terrain
+Tags:two-columns, left-sidebar, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments
+*/
+
+// Base
+
+@import "base/reset";
+@import "base/variables";
+@import "base/mixins";
+
+// Components
+
+@import "components/universal";
+@import "components/layout";
+@import "components/buttons";
+@import "components/navigation";
+@import "components/posts";

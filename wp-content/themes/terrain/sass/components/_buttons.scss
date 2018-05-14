@@ -1,0 +1,12 @@
+
+#{$buttons} { 
+  @include brad(1rem); 
+  background: $buttonbg;
+  border: 1px solid #1E6BD6;
+  text-decoration: none;
+  font-size: .95rem;
+  padding: .4rem;
+  &:hover {
+    // hover styles
+  } 
+} 

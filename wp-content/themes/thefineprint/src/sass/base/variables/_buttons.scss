@@ -1,0 +1,31 @@
+
+/* Buttons */
+
+$button-background: $primary-color;
+$button-background-hover: darken($button-background, 10%);
+$button-color: #ffffff;
+$button-font-weight: 600;
+$button-font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+$button-font-size: 1rem;
+$button-border-width: 1px;
+$button-border-style: solid;
+$button-border-color: $button-background;
+$button-border-radius: $border-radius;
+$button-text-transform: none;
+
+
+// Accent buttons
+$accent-button-background: $secondary-color;
+$accent-button-color: #ffffff;
+$accent-button-color-hover: #ffffff;
+
+// Muted Buttons
+$muted-border: 1px solid $accent-color;
+$muted-border-hover: 1px solid darken($accent-color, 30%);
+$muted-background: transparent;
+$muted-background-hover: transparent;
+$muted-color: darken($accent-color, 50%);
+$muted-color-hover: darken($accent-color, 50%);
+
+// Round Buttons
+$round-buttons: 40px;

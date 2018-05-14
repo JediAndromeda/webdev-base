@@ -1,0 +1,36 @@
+html, body {
+  
+}
+body {
+  display: grid;
+  grid-template-columns: [c1] 10rem minmax(20rem, 1fr);
+  grid-template-rows: 1fr;
+  
+  
+
+}
+
+header {
+
+ 
+
+}
+nav {
+  /*grid-column: 1 span 1;
+  grid-row: 1 / ;*/
+  background: NAVAJOWHITE;
+}
+
+main{
+	
+
+}
+footer{
+	
+}
+
+
+.normal{
+	
+}
+
